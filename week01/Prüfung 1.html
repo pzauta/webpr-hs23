@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    //Q1
+    // const foo = () => true;
+    // document.writeln(foo(1))
+
+    // function foo()
+    // {
+    //     true
+    // }
+    // document.writeln(foo())
+
+    // const foo = () => true;
+    // document.writeln(foo())
+
+    // function foo()
+    // {
+    //     return true;
+    // }
+    // document.writeln(foo())
+
+    // const foo = true;
+    // document.writeln(foo())
+
+    // const foo = (x) => true;
+    // document.writeln(foo())
+
+    //Q2
+    // function one(x) {
+    //     return x;
+    // }
+    //
+    // function two(x, y) {
+    //     return x + y;
+    // }
+    //
+    // function three(x, y, z) {
+    //     return x + y + z;
+    // }
+    // const functions = [null, one, two, three]
+    // document.writeln(functions[1](1))
+
+    //Q3A
+    // function id(arg) { return arg; }
+    //
+    // const x_ = Math.random();
+    // document.writeln(String(id(x_) === x_));
+
+
+    //TEST Q3b
+
+    const plus = (x) => (y) => x+y;
+
+
+    const x_ = Math.random();
+    const y_ = Math.random();
+    const plus3 = plus(3);
+    document.writeln(String(plus(x_)(y_) === x_ + y_ && plus3(y_) === y_ + 3));
+
+</script>
+
+</body>
+</html>
