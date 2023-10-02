@@ -4,20 +4,35 @@
     <meta charset="UTF-8">
     <title>Scope Tests</title>
 </head>
-<body>
+<body id="x">
     <script>
 
-        let x = 0;
-        function foo() {
-            let x = 1;
-            document.writeln(x);
-        }
-        foo();
-        document.writeln(x);
+        // const x = 0;
+        // (()=> {
+        //     const x = 1;
+        //     document.writeln(x);
+        // })();
+        //
+        // document.writeln(x);
 
-        // document.writeln( id(id) === id);
-        // document.writeln( Konst(id)(undefined) === id);
-        // document.writeln( Kite(undefined)(id) === id);
+        const test = testResult => {
+            if (testResult === false) {
+                console.error("test failed");
+            }
+            document.writeln(String(testResult) );
+        };
+
+        const id    = x => x;
+        const konst = x => y => x;
+        // const snd   = x => y => y; // id
+        // const snd   = x => y => id(y); // eta
+        // const snd   = x => id; // konst
+        // const snd   = x => konst(id)(x); // eta
+        const snd      = konst(id);
+
+        test(id(id) === id);
+        test(konst (id) (undefined) === id);
+        test(snd (undefined) (id)   === id);
 
     </script>
 </body>
