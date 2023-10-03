@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<script>
+
+    const id = x => x;
+    const konst = x => y => x;
+
+    // const snd   = konst (id);
+
+    const T = konst;
+    const F = konst(id);
+
+    // Q7
+    // const pair = a => b => f => f(a)(b)
+    // const fst = p => p(T);
+    // const snd = p => p(F);
+    //
+    // const oneTwo = pair(1,2);
+    // document.writeln(fst(oneTwo) === 1);
+
+
+    // const pair = a => b => f => f(a)(b)
+    // const fst = p => p(T);
+    // const snd = p => p(F);
+    //
+    // const oneTwo = pair(1)(2);
+    // document.writeln(fst(oneTwo) === 1);
+
+
+    // const pair = a => b => f => f(a)(b)
+    // const fst = p => p(T);
+    // const snd = p => p(F);
+    //
+    // const pairEq = a => b => fst(a) === fst(b) && snd(a) === snd(b);
+    // const pairMap = f => p => pair (f(fst(p))) (f(snd(p)))
+    //
+    // const oneTwo = pair(1)(2);
+    // const square = x => x * x;
+    // const result = pairMap (square) (oneTwo);
+    // document.writeln(pairEq(result)(pair(1)(4)));
+
+    // const pair = a => b => f => f(a)(b)
+    // const fst = p => p(T);
+    // const snd = p => p(F);
+    //
+    // const pairEq = a => b => fst(a) === fst(b) && snd(a) === snd(b);
+    // const pairPlus = a => b => pair (fst(a) + fst (b)) (snd(a) + snd(b));
+    //
+    // const oneTwo = pair(1)(2);
+    // const sum = pairPlus(oneTwo) (oneTwo);
+    //
+    // document.writeln(pairEq(sum)(pair(2)(4)));
+
+
+    // const pair = a => b => f => f(a)(b)
+    // const fst = p => p(T);
+    // const snd = p => p(F);
+    //
+    // const oneTwo = pair(1)(2);
+    // fst(oneTwo) = 0;
+    // document.writeln(fst(oneTwo) === 0);
+
+    // Q8
+
+    // const s1 = x => y => z => x;
+    // const s2 = x => y => z => y;
+    // const s3 = x => y => z => z;
+    //
+    // const triple = x => y => z => f => f(x) (y) (z);
+    // const a = t => t(s1);
+    // const b = t => t(s2);
+    // const c = t => t(s3);
+    //
+    // const oneTwoThree = triple(1);
+    // document.writeln(a(oneTwoThree) === 1);
+
+
+    // const s1 = x => y => z => x;
+    // const s2 = x => y => z => y;
+    // const s3 = x => y => z => z;
+    //
+    // const triple = x => y => z => f => f(x) (y) (z);
+    // const a = t => t(s1);
+    // const b = t => t(s2);
+    // const c = t => t(s3);
+    //
+    //
+    // const person = triple;
+    // const firstname = a;
+    // const lastname = b;
+    // const age = c;
+    //
+    // const bran = person("Brendan") ("Eich") (50);
+    //
+    //
+    // document.writeln(firstname(bran) === "Brendan");
+
+
+    // const s1 = x => y => z => x;
+    // const s2 = x => y => z => y;
+    // const s3 = x => y => z => z;
+    //
+    // const triple = x => y => z => f => f(x) (y) (z);
+    // const a = t => t(s1);
+    // const b = t => t(s2);
+    // const c = t => t(s3);
+    //
+    //
+    // const person = triple;
+    // const firstname = a;
+    // const lastname = b;
+    // const age = c;
+    //
+    // const bran = person("Brendan");
+    // const raven = bran ("Stark") (16);
+    // const eich = bran ("Eich") (50);
+    //
+    //
+    // document.writeln(age(raven) === 16);
+
+    // const s1 = x => y => z => x;
+    // const s2 = x => y => z => y;
+    // const s3 = x => y => z => z;
+    //
+    // const triple = x => y => z => f => f(x) (y) (z);
+    // const a = t => t(s1);
+    // const b = t => t(s2);
+    // const c = t => t(s3);
+    //
+    //
+    // const person = triple;
+    // const firstname = a;
+    // const lastname = b;
+    // const age = c;
+    //
+    // const bran = person("Brendan");
+    // const raven = bran ("Stark") (16);
+    // const eich = bran ("Eich") (50);
+    //
+    //
+    // document.writeln(firstname(bran) === "Brendan");
+    //
+
+    // Q9
+
+    // const Left = x => f => g => f(x);
+    // const Right = x => f => g => g(x);
+    // const either = e => f => g => e(f)(g);
+    //
+    // const safeDiv = num => divisor =>
+    //     divisor === 0
+    //         ? Left("cannot device by 0")
+    //         : Right(num / divisor);
+    //
+    // const result = safeDiv(1)(0);
+    //
+    // either (result) (msg => document.writeln(msg));
+
+
+    // const Left = x => f => g => f(x);
+    // const Right = x => f => g => g(x);
+    // const either = e => f => g => e(f)(g);
+    //
+    // const safeDiv = num => divisor =>
+    //     divisor === 0
+    //         ? Left("cannot device by 0")
+    //         : Right(num / divisor);
+    //
+    // const result = safeDiv(1)(0);
+    //
+    // either (result) (msg => document.writeln(msg)) (val => document.writeln(val === 1));
+
+
+    // Q9c
+    const Left   = x => f => g => f (x);
+    const Right  = x => f => g => g (x);
+    const either = e => f => g => e (f) (g);
+    const id = x => x;
+
+    //  CODE
+    const eShow = either(id,result => "Result is: " + result);
+
+    //  Code
+
+    // Testing:
+    const x_ = Math.random();
+    const safeDiv = num => divisor =>
+        divisor === 0
+            ? Left  ("Cannot divide by 0")
+            : Right (num / divisor);
+
+    eShow( safeDiv(1)(0))  === "Cannot divide by 0" && eShow( safeDiv(x_)(1)) === "Result is: "+x_
+
+
+
+</script>
+
+</body>
+</html>
