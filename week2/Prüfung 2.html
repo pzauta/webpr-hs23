@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<script>
+
+    //Q4
+    // let x = 0;
+    // function two() {
+    //     x=2;
+    //     return x;
+    // }
+    // two();
+    // try{
+    //     x;
+    //     document.writeln(x===0)
+    //     document.writeln(x)
+    // } catch (e){
+    //     document.writeln(false);
+    // }
+
+    // let x = 0;
+    // function two() {
+    //     let x=2;
+    //     return x;
+    // }
+    // two();
+    // try{
+    //     x;
+    //     document.writeln(x===0)
+    //     document.writeln(x)
+    // } catch (e){
+    //     document.writeln(false);
+    // }
+
+    // function two() {
+    //     x=2;
+    //     return x;
+    // }
+    //
+    // try{
+    //     x;
+    //     document.writeln(true)
+    //     document.writeln(x)
+    // } catch (e){
+    //     document.writeln(false);
+    // }
+
+    // function two() {
+    //     let x=2;
+    //     return x;
+    // }
+    //
+    // try{
+    //     x;
+    //     document.writeln(true)
+    //     document.writeln(x)
+    // } catch (e){
+    //     document.writeln(false);
+    // }
+
+    // function two() {
+    //     let x=2;
+    //     return x;
+    // }
+    // two();
+    //
+    // try{
+    //     x;
+    //     document.writeln(true);
+    //     document.writeln(x);
+    // } catch (e){
+    //     document.writeln(false);
+    //     document.writeln("x");
+    // }
+
+
+
+
+    //Q5
+
+    // x = 0;
+    // ( () => {
+    //     x= 2;
+    //     return x;
+    // })();
+    //
+    // try {
+    //     document.writeln(x===0)
+    // } catch (e){
+    //     document.writeln(false)
+    // }
+
+    // let x = 0;
+    // function two() {
+    //     let x = 2;
+    //     return x;
+    // }();
+    //
+    // try {
+    //     document.writeln(x===0)
+    // } catch (e){
+    //     document.writeln(false)
+    // }
+
+    // let x = 0;
+    // ( () => {
+    //     let x= 2;
+    //     return x;
+    // })();
+    //
+    // try {
+    //     document.writeln(x===0)
+    // } catch (e){
+    //     document.writeln(false)
+    // }
+
+    // let x = 0;
+    // function two() {
+    //     let x = 2;
+    //     return x;
+    // }
+    // two();
+    //
+    // try {
+    //     document.writeln(x===0)
+    // } catch (e){
+    //     document.writeln("false")
+    // }
+
+
+    // let x = 0;
+    // ( () => {
+    //     let x = 2;
+    //     return x;
+    // })();
+    //
+    // try {
+    //     document.writeln(x===0)
+    // } catch (e){
+    //     document.writeln(false)
+    // }
+
+
+    // let x = 0;
+    // (function two() {
+    //     let x = 2;
+    //     return x;
+    // })();
+    //
+    // try {
+    //     document.writeln(x===0)
+    // } catch (e){
+    //     document.writeln(false)
+    // }
+
+    //Q6
+
+    // const id = x => x;
+    // const konst = x => y => x;
+    //
+    // const F1 = x => y => konst (id) (x) (y);
+    // const F2 = x => konst (id) (x);
+    // const F3 = konst (id);
+    //
+    // y => x => x (y)
+
+
+
+    //Q6a test
+
+    const id = y => y;
+    const fst = x => y => x;
+
+    // const snd = x => y => y;
+    const snd = fst(id);
+    // const bla = x => y => x;
+
+    const x_ = Math.random();
+    const y_ = Math.random();
+    document.writeln(String(snd(x_)(y_) === y_));
+
+
+</script>
+
+</body>
+</html>
