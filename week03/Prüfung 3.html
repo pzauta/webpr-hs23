@@ -12,10 +12,10 @@
 
     // const snd   = konst (id);
 
-    const T = konst;
-    const F = konst(id);
-
-    // Q7
+    // const T = konst;
+    // const F = konst(id);
+    //
+    // // Q7
     // const pair = a => b => f => f(a)(b)
     // const fst = p => p(T);
     // const snd = p => p(F);
@@ -162,40 +162,44 @@
     // either (result) (msg => document.writeln(msg));
 
 
-    // const Left = x => f => g => f(x);
-    // const Right = x => f => g => g(x);
-    // const either = e => f => g => e(f)(g);
-    //
-    // const safeDiv = num => divisor =>
-    //     divisor === 0
-    //         ? Left("cannot device by 0")
-    //         : Right(num / divisor);
-    //
-    // const result = safeDiv(1)(0);
-    //
-    // either (result) (msg => document.writeln(msg)) (val => document.writeln(val === 1));
+    const Left = x => f => g => f(x);
+    const Right = x => f => g => g(x);
+    const either = e => f => g => e(f)(g);
+
+    const safeDiv = num => divisor =>
+        divisor === 0
+            ? Left("cannot device by 0")
+            : Right(num / divisor);
+
+    const result = safeDiv(1)(1);
+
+    either (result) (msg => document.writeln(msg)) (val => document.writeln(val === 1));
 
 
     // Q9c
-    const Left   = x => f => g => f (x);
-    const Right  = x => f => g => g (x);
-    const either = e => f => g => e (f) (g);
-    const id = x => x;
-
-    //  CODE
-    const eShow = either(id,result => "Result is: " + result);
-
-    //  Code
-
-    // Testing:
-    const x_ = Math.random();
-    const safeDiv = num => divisor =>
-        divisor === 0
-            ? Left  ("Cannot divide by 0")
-            : Right (num / divisor);
-
-    eShow( safeDiv(1)(0))  === "Cannot divide by 0" && eShow( safeDiv(x_)(1)) === "Result is: "+x_
-
+    //takes the result form safeDiv and return either the error message or the result
+    // const Left   = x => f => g => f (x);
+    // const Right  = x => f => g => g (x);
+    // const either = e => f => g => e (f) (g);
+    // const id = x => x;
+    //
+    // //  CODE
+    // const eShow = sd => either (sd) (id) (resultValue => "Result is: " + resultValue);
+    //
+    //
+    //
+    // // Testing:
+    // const x_ = Math.random();
+    // const safeDiv = num => divisor =>
+    //     divisor === 0
+    //         ? Left  ("Cannot divide by 0")
+    //         : Right (num / divisor);
+    //
+    // document.writeln(eShow( safeDiv(1)(0))  === "Cannot divide by 0" && eShow( safeDiv(x_)(1)) === "Result is: "+x_);
+    // document.writeln("__________________");
+    // document.writeln(eShow(safeDiv(1)(0)))
+    // document.writeln("__________________");
+    // document.writeln(eShow(safeDiv(1)(1)))
 
 
 </script>
