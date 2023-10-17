@@ -9,7 +9,12 @@ function start() {
     const canvas       = document.getElementById('canvas');
 
     // todo: how to display?
-
+    let foo = Function("x", "return Math.cos(x)");
+    display(canvas, foo);
+    userFunction.onchange = evt => {
+        foo = Function("x", "return " + userFunction.value);
+        display(canvas, foo);
+    }
 }
 
 function display(canvas, f) {
