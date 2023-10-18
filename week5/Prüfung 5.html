@@ -50,13 +50,14 @@
     const factor_ = 0.2;
     const bonusFormula = 'employee.revenue * 0.2';
 
-
-    const bonusCalculation = Function('employee', 'return ' + bonusFormula)
+    const bonusCalculation = Function("employee", "return employee.bonus = " + bonusFormula);
 
     //Testing
     const e = {revenue: 10000, bonus: null};
     bonusCalculation(e);
     document.writeln(e.bonus === e.revenue * factor_);
+
+
 </script>
 
 </body>
