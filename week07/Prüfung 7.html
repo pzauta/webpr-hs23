@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<script>
+    //Q14a
+    // JavaScript has no standard way of comparing arrays for equivalence.
+    // We cannot overload the '===' operator for arrays.
+    // But we can provide a function 'eq' such that for all arrays 'xs' and 'ys'
+    // 'xs.eq(ys)' is true if and only if for all valid indexes 'i' the condition
+    // 'xs[i] === ys[i]' is true.
+    //  Provide the 'eq' function. Only arrays of the same length can be equal.
+    //  You can ignore errors that arise from 'xs' or 'ys' not being of type array.
+
+    //  Code Here:
+
+
+    //Tested Against:
+    //xs1_.eq(ys1_) && ! xs2_.eq(ys2_) && xs3_.eq(ys3_) && ! xs3_.eq(ys4_) && ! xs4_.eq(ys3_)
+    //document.writeln(xs1_.eq(ys1_) && ! xs2_.eq(ys2_) && xs3_.eq(ys3_) && ! xs3_.eq(ys4_) && ! xs4_.eq(ys3_));
+
+
+    // Q16a
+    // JavaScript is functional and functional languages should provide function composition.
+    // Let's assume we have functions like
+    // const inc    = x => x + 1;
+    // const double = x => x * 2;
+    // Provide a general function 'then' that can combine _any_ such functions such that
+    // inc.then(double).then(double)
+    // can be used like
+    // inc.then(double).then(double) (1) === 8
+    //
+    // Note: you cannot assume what the functions are actually doing.
+    //     It must work for all functions!
+
+    //  Code Here:
+
+
+    //Tested Against:
+    //document.writeln(add.then(mult).then(add) (1) === (1 + add_) * factor_ + add_);
+
+
+
+</script>
+
+</body>
+</html>
