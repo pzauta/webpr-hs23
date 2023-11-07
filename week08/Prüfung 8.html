@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<script>
+    //Q18a
+    // Provide a function 'failSafe' that - in curried style - takes
+    // - a default value
+    // - a callback function
+    // - an argument to the callback function
+    // that returns whatever the callback function returns given its argument
+    // or the default value if the callback function throws an Error.
+    //
+    //     Note: see how the tests make use of failSafe.
+
+    //  Code Here:
+
+
+
+    const failSafe = value => errFunc => x => {
+        try {
+            return errFunc(x);
+        } catch (e) {
+            return value;
+        }
+    };
+
+
+    //Tested Against:
+    const doError    = x => { throw new Error() };
+    const errorCount = failSafe (1) (doError);
+
+    document.writeln(String(failSafe (false) (x=>x) (true) && failSafe (true) (doError) (null) && errorCount(null) === 1));
+
+
+
+
+</script>
+
+</body>
+</html>
