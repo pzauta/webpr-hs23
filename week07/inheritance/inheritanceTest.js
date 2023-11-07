@@ -86,14 +86,10 @@
             worklog: worklog,
             work:    () => worklog.push(worker.work())
         };
-
         Object.setPrototypeOf(result, Person.prototype);
-
         return result
     }
-
     const dk = Person( {work: () => ""} );
-
     ok.push(dk instanceof Person);
 
     report("inheritance-setProto", ok);
