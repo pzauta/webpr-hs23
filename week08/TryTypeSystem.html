@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /**
+     * @typedef { Number | String } FortyTwoType
+     */
+
+    /**
+     * @param  { FortyTwoType } arg
+     * @return { FortyTwoType }
+     */
+    const foo = arg => {
+        return (arg + 1);
+    };
+
+    document.writeln( String(foo(42)   ));
+    document.writeln( String(foo("42") ));
+    // document.writeln( String(foo(true) )); // inspection finding
+
+    /**
+     * @param { "webPr" | "webCl" } name
+     */
+    const greeting = name => console.log("Hello, " + name);
+
+    greeting("webPr");
+    greeting("webCl");
+    // greeting("webFr");
+
+    /**
+     * @typedef PersonType
+     * @property { !String } firstName
+     * @property { !String } lastName - ...
+     */
+    /**
+     * @constructor
+     * @param { !String } first
+     * @param { !String } last
+     * @return { PersonType }
+     * @example
+     * const p = Person("Roger", "Federer");
+     */
+    const Person = (first, last) => {
+        // ...
+        return { firstName: first, lastName: last };
+    };
+
+    const p = Person("Roger", "Federer");
+    p.firstName;
+
+
+</script>
+
+</body>
+</html>
