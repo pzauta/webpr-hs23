@@ -1,11 +1,159 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Test</title>
-</head>
-<body>
 <script>
+    //Q15
+
+    // class Person {
+    //     constructor(name, age) {
+    //         this.name = name;
+    //     }
+    //     isCool() {return this.name.length > 3};
+    // }
+    //
+    // const p = new Person("Joe");
+    // Person.prototype.isCool = () => true;
+    // document.writeln(p.isCool());
+
+    // class Person {
+    //     isCool() {return this.name.length > 3};
+    // }
+    //
+    // const p = new Person();
+    // p.name = "Dierk";
+    // document.writeln(p.isCool());
+
+    // class Person {
+    //     constructor(name) {
+    //
+    //     }
+    //     isCool() {return this.name.length > 3};
+    // }
+    //
+    // const p = new Person("Dierk");
+    // document.writeln(p.isCool());
+    // class Person {
+    //     constructor(name) {
+    //         this.name = name;
+    //     }
+    //     isCool() {
+    //         return this.name.length > 3
+    //     };
+    // }
+    //
+    // const p = new Person("Joe");
+    // p.isCool = () => true;
+    // document.writeln(p.isCool());
+
+    // class Person {
+    //     constructor(name) {
+    //         this.name = name;
+    //     }
+    //     isCool() {
+    //         return this.name.length > 3
+    //     };
+    // }
+    //
+    // const p = new Person("Joe");
+    // p.prototype.isCool = () => true;
+    // document.writeln(p.isCool());
+
+    // class Person {
+    //     constructor(name) {
+    //         this.name = name;
+    //     }
+    //     isCool() {
+    //         return this.name === 'Dierk'
+    //     };
+    // }
+    //
+    // const p = new Person("Dierk");
+    // document.writeln(p.isCool());
+
+    // class Person {
+    //     constructor(name) {
+    //         this.name = name;
+    //     }
+    //     isCool() {
+    //         return this.name.length > 3
+    //     };
+    // }
+    //
+    // const p = new Person("Dierk");
+    // document.writeln(p.name === 'Dierk');
+
+    // class Person {
+    //     constructor(name) {
+    //         this.name = name;
+    //     }
+    //     isCool() {
+    //         return this.name.length > 3
+    //     };
+    // }
+    //
+    // const p = new Person("Dierk");
+    // document.writeln(p.isCool());
+
+    // class Person {
+    //     constructor(name) {
+    //         this.name = name;
+    //     }
+    //     isCool() {
+    //         return this.name.length > 3
+    //     };
+    // }
+    //
+    // const p = new Person("Dierk");
+    // const joe = {
+    //     name: "joe",
+    //     isCool: p.isCool
+    // };
+    // document.writeln(joe.isCool());
+
+
+    //Q16
+    // class Person {}
+    // class Student {}
+    // const s = new Student();
+    // Object.setPrototypeOf(Student.prototype, Person.prototype);
+    // document.writeln(s instanceof Person);
+
+    // class Person {}
+    // const p = {};
+    // Object.setPrototypeOf(p, Person.prototype);
+    // document.writeln(p instanceof Person);
+
+    // class Person {}
+    // class Student {}
+    // const s = new Student();
+    // Object.setPrototypeOf(s, Student.prototype);
+    // document.writeln(s instanceof Person);
+
+    // class Person {
+    //     constructor(name) {
+    //         this.name = name;
+    //     }
+    //     isCool() {
+    //         return this.name.length > 3
+    //     };
+    // }
+    // const p = new Person("Dierk");
+    // document.writeln(p instanceof Person);
+
+    // class Person {}
+    // class Student {}
+    // const s = new Student();
+    // Object.setPrototypeOf(Student, Person);
+    // document.writeln(s instanceof Person);
+
+    // class Person {}
+    // class Student extends Person {}
+    // const s = new Student();
+    // document.writeln(s instanceof Person);
+
+    // class Person {}
+    // class Student {}
+    // const s = new Student();
+    // Object.setPrototypeOf(s, Person.prototype);
+    // document.writeln(s instanceof Student);
+
     //Q14a
     // JavaScript has no standard way of comparing arrays for equivalence.
     // We cannot overload the '===' operator for arrays.
@@ -36,15 +184,32 @@
     // Note: you cannot assume what the functions are actually doing.
     //     It must work for all functions!
 
+    const inc    = x => x + 1;
+    const double = x => x * 2;
+    const mult   = x => y => x * y;
+    const add    = x => y => x + y;
+    const add_   = 1;
+    const factor_= 2;
+
     //  Code Here:
+    Function.prototype.then = function (fun) {
+        return nextElement => fun(this(nextElement));
+    };
+
 
 
     //Tested Against:
-    //document.writeln(add.then(mult).then(add) (1) === (1 + add_) * factor_ + add_);
-
+    document.writeln(add.then(mult).then(add) (1) === (1 + add_) * factor_ + add_);
 
 
 </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
 
 </body>
 </html>
