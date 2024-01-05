@@ -21,13 +21,22 @@
     // The question title contains implementation hints.
 
     //Code Here:
+    const str2chars = str  => [...str];            // convert a string to an array of chars
+    const isAlpha   = char => char.match(/[a-z]/); // char is in the alphabet
+
+    //Code Here:
+    const palindrome = (phrase) => {
+        const chars = str2chars(phrase.toLowerCase()).filter(isAlpha);
+        return chars.join('') === chars.reverse().join('');
+    };
+
 
 
     //Tested Against:
-    //     palindrome("Amore, Roma!")
-    // && palindrome("Madam, I'm Adam!")
-    // && palindrome("Never odd or even.")
-    // && ! palindrome("Amore")
+    document.writeln(palindrome("Amore, Roma!")
+    && palindrome("Madam, I'm Adam!")
+    && palindrome("Never odd or even.")
+    && ! palindrome("Amore"));
 
 
 

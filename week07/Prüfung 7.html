@@ -163,12 +163,34 @@
     //  Provide the 'eq' function. Only arrays of the same length can be equal.
     //  You can ignore errors that arise from 'xs' or 'ys' not being of type array.
 
-    //  Code Here:
+    const xs1_ = [1,2,3,4]
+    const ys1_ = [1,2,3,4]
+    const xs2_ = [1,1,1,1]
+    const ys2_ = [1,1,1,2]
+    const xs3_ = [3,3,3,3]
+    const ys3_ = [3,3]
+    const xs4_ = [3,3,3]
+    const ys4_ = [3,3,3,3]
 
 
-    //Tested Against:
-    //xs1_.eq(ys1_) && ! xs2_.eq(ys2_) && xs3_.eq(ys3_) && ! xs3_.eq(ys4_) && ! xs4_.eq(ys3_)
-    //document.writeln(xs1_.eq(ys1_) && ! xs2_.eq(ys2_) && xs3_.eq(ys3_) && ! xs3_.eq(ys4_) && ! xs4_.eq(ys3_));
+
+    //Achtung Variablennamen ändern -> Testing
+
+    //-----------------------
+    Array.prototype.eq = function (y) {
+        if(this.length !== y.length) {
+            return false;
+        }
+        for (let i = 0; i < this.length; i++) {
+            if(this[i] !== y[i]){
+                return false;
+            }
+        }
+        return true;
+    };
+    //-----------------------------
+
+    document.writeln(xs1_.eq(ys1_) && ! xs2_.eq(ys2_) && xs3_.eq(ys4_) && ! xs4_.eq(ys3_));
 
 
     // Q16a
@@ -184,22 +206,22 @@
     // Note: you cannot assume what the functions are actually doing.
     //     It must work for all functions!
 
-    const inc    = x => x + 1;
-    const double = x => x * 2;
-    const mult   = x => y => x * y;
-    const add    = x => y => x + y;
-    const add_   = 1;
-    const factor_= 2;
-
-    //  Code Here:
-    Function.prototype.then = function (fun) {
-        return nextElement => fun(this(nextElement));
-    };
-
-
-
-    //Tested Against:
-    document.writeln(add.then(mult).then(add) (1) === (1 + add_) * factor_ + add_);
+    // const inc    = x => x + 1;
+    // const double = x => x * 2;
+    // const mult   = x => y => x * y;
+    // const add    = x => y => x + y;
+    // const add_   = 1;
+    // const factor_= 2;
+    //
+    // //  Code Here:
+    // Function.prototype.then = function (fun) {
+    //     return nextElement => fun(this(nextElement));
+    // };
+    //
+    //
+    //
+    // //Tested Against:
+    // document.writeln(add.then(mult).then(add) (1) === (1 + add_) * factor_ + add_);
 
 
 </script>

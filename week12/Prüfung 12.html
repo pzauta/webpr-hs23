@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<script>
+
+    //Q35a
+    // Given the Iterator constructor as in the lectures:
+    //     const Iterator = (startValue, whileFn, incrementFn) => {
+    //         const next = () => {
+    //             const proceed = whileFn(startValue);
+    //             let   value = undefined;
+    //             if (proceed) {
+    //                 value = startValue;
+    //                 startValue = incrementFn(startValue);
+    //             }
+    //             return { value: value, done: !proceed };
+    //         };
+    //         return {
+    //             [Symbol.iterator]: () => ({ next })
+    //         };
+    //     };
+    // provide code like
+    // const startValue  = ____;
+    // const whileFn     = ____;
+    // const incrementFn = ____;
+    // such that
+    // Iterator(startValue, whileFn, incrementFn);
+    // produces all odd numbers between 10 and 20.
+
+
+    //Code Here:
+
+    // const startValue  = 11;
+    // const whileFn     = i => i < 20;
+    // const incrementFn = i => i + 2;
+
+
+    //Tested Against:
+    // ;
+    // const Iterator = (startValue, whileFn, incrementFn) => {
+    //     const next = () => {
+    //         const proceed = whileFn(startValue);
+    //         let   value = undefined;
+    //         if (proceed) {
+    //             value = startValue;
+    //             startValue = incrementFn(startValue);
+    //         }
+    //         return { value: value, done: !proceed };
+    //     };
+    //     return {
+    //         [Symbol.iterator]: () => ({ next })
+    //     };
+    // };
+    // document.writeln([...Iterator(startValue, whileFn, incrementFn)].toString() === "11,13,15,17,19");
+
+
+    //Q35b
+    // Given an __infinite__ Iterator over all positive odd numbers named "oddNumbers"
+    // Provide a function "collect" like
+    // const collect = n => oddNumbers =>  ____;
+    // that returns the sum of the first n odd numbers.
+
+    //Code Here:
+
+    const collect = n => oddNumbers => {
+        let sum = 0;
+        for (const newOddNumber of oddNumbers) {
+            if (n === 0) {
+                break;
+            }
+            sum += newOddNumber;
+            n--;
+        }
+        return sum;
+    };
+
+
+
+
+    //Tested Against:
+    ;
+    const Iterator = (startValue, whileFn, incrementFn) => {
+        const next = () => {
+            const proceed = whileFn(startValue);
+            let   value = undefined;
+            if (proceed) {
+                value = startValue;
+                startValue = incrementFn(startValue);
+            }
+            return { value: value, done: !proceed };
+        };
+        return {
+            [Symbol.iterator]: () => ({ next })
+        };
+    };
+    const oddNumbers = () => Iterator(1, x => true, x => x + 2);
+    const _x = Math.floor( 1 + Math.random() * 100);
+    document.writeln(String(collect(3)(oddNumbers())  ===  9 && collect(6)(oddNumbers())  === 36 && collect(_x)(oddNumbers()) === _x * _x));
+
+</script>
+
+</body>
+</html>

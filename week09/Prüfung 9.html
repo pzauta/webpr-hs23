@@ -266,12 +266,17 @@
     // NullSafe(null).then(console.log);                // will not call the log
     // NullSafe(2).then( x => null).then(console.log);  // will not call the log
 
+    x_ = 5;
+
     //Code Here
+
+    // Achtung -> Variablennamen ändern
+    const NullSafe = x => {
             const isNullSafe = y => y && y.then;
-            const maywrap    = y => ___ ; // if y is not NullSafe yet, make it so
+            const maywrap    = y => NullSafe(y);  // if y is not NullSafe yet, make it so
             return {
-                then: fn => ___ // see(1)
-            }
+                then: fn => isNullSafe(x) ? maywrap(x.then(fn)) : x !== null ? NullSafe(fn(x)) : NullSafe(null)// see(1)
+            };
         };
 
 
