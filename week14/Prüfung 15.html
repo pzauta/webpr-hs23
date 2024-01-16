@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<script>
+    //Q34
+    // const door = { open: false};
+    //
+    // const open = door => {
+    //     if (door.open) {
+    //         return "already open";
+    //     }
+    //     door.open = true;
+    //     return "open";
+    // };
+    //
+    // document.writeln("Door is " );
+    // document.writeln(open(door) || "closed");
+
+    // const door = { open: false};
+    //
+    // const open = door => {
+    //     if (door.open) {
+    //         return "already open";
+    //     }
+    //     door.open = true;
+    //     return "open";
+    // };
+    //
+    // document.writeln("Door is " );
+    // document.writeln(open.open || "closed");
+
+    // const door = { open: false};
+    //
+    // const open = door => {
+    //     if (door.open) {
+    //         return "already open";
+    //     }
+    //     door.open = true;
+    //     return "open";
+    // };
+    //
+    // document.writeln("Door is " );
+    // document.writeln(open(door) || "closed");
+
+    // //Q34a
+    // // provide code like
+    // const value = {};
+    // //where you replace the ____ placeholder with a value that will yield
+    // //different results when used in
+    // //if (value) ...
+    // //as opposed to
+    // //if (value == true) {
+    //
+    // //}
+    //
+    // document.writeln((value ? true : false) !== (value == true ? true : false))
+
+    const value = {};
+
+    document.writeln({} == value  === false);
+    document.writeln({} >  value  === false);
+    document.writeln({} >= value  === true);
+
+
+</script>
+
+</body>
+</html>
